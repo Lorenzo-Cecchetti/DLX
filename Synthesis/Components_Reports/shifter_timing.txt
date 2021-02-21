@@ -1,0 +1,51 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SHIFTER
+Version: F-2011.09-SP3
+Date   : Thu Oct 15 13:04:58 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: B[4] (input port)
+  Endpoint: Z[18] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SHIFTER            5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  B[4] (in)                                0.00       0.00 r
+  U1522/ZN (INV_X1)                        0.03       0.03 f
+  U1589/ZN (AND2_X2)                       0.04       0.07 f
+  U1420/Z (BUF_X1)                         0.05       0.12 f
+  U1824/Z (BUF_X1)                         0.05       0.17 f
+  U1746/ZN (AOI21_X1)                      0.08       0.25 r
+  U1810/ZN (AND2_X1)                       0.06       0.31 r
+  U1901/ZN (OAI22_X1)                      0.04       0.35 f
+  U2026/ZN (AOI222_X1)                     0.11       0.47 r
+  U1943/ZN (NAND4_X1)                      0.04       0.51 f
+  Z[18] (out)                              0.00       0.51 f
+  data arrival time                                   0.51
+
+  max_delay                                0.51       0.51
+  output external delay                    0.00       0.51
+  data required time                                  0.51
+  -----------------------------------------------------------
+  data required time                                  0.51
+  data arrival time                                  -0.51
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

@@ -1,0 +1,56 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : JUMP_ADDER
+Version: F-2011.09-SP3
+Date   : Tue Oct  6 20:15:25 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: A[2] (input port)
+  Endpoint: S[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  JUMP_ADDER         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  A[2] (in)                                               0.00       0.00 f
+  add_14/A[2] (JUMP_ADDER_DW01_add_2)                     0.00       0.00 f
+  add_14/U152/ZN (INV_X1)                                 0.03       0.03 r
+  add_14/U151/ZN (NAND2_X1)                               0.03       0.05 f
+  add_14/U150/ZN (NAND2_X1)                               0.03       0.09 r
+  add_14/U148/ZN (NAND3_X1)                               0.04       0.12 f
+  add_14/U149/ZN (NAND3_X1)                               0.04       0.16 r
+  add_14/U178/Z (BUF_X1)                                  0.03       0.19 r
+  add_14/U184/ZN (OAI21_X1)                               0.04       0.23 f
+  add_14/U126/ZN (AOI21_X1)                               0.06       0.30 r
+  add_14/U176/ZN (OAI21_X1)                               0.04       0.33 f
+  add_14/U301/ZN (NAND2_X1)                               0.03       0.37 r
+  add_14/U300/ZN (NAND2_X1)                               0.03       0.40 f
+  add_14/U229/ZN (AOI21_X1)                               0.05       0.44 r
+  add_14/U105/ZN (XNOR2_X1)                               0.05       0.50 r
+  add_14/SUM[15] (JUMP_ADDER_DW01_add_2)                  0.00       0.50 r
+  S[15] (out)                                             0.00       0.50 r
+  data arrival time                                                  0.50
+
+  max_delay                                               0.50       0.50
+  output external delay                                   0.00       0.50
+  data required time                                                 0.50
+  --------------------------------------------------------------------------
+  data required time                                                 0.50
+  data arrival time                                                 -0.50
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

@@ -1,0 +1,88 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : WRF_M8_N8_F4_N_bit32
+Version: F-2011.09-SP3
+Date   : Tue Oct  6 20:43:49 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: phy_reg_reg[71][1]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: phy_reg_reg[71][1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  WRF_M8_N8_F4_N_bit32
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  phy_reg_reg[71][1]/CK (DFFR_X1)          0.00 #     0.00 r
+  phy_reg_reg[71][1]/Q (DFFR_X1)           0.09       0.09 f
+  U20140/ZN (AOI22_X1)                     0.05       0.14 r
+  U20139/ZN (OAI221_X1)                    0.05       0.19 f
+  phy_reg_reg[71][1]/D (DFFR_X1)           0.01       0.20 f
+  data arrival time                                   0.20
+
+  clock CLK (rise edge)                    0.48       0.48
+  clock network delay (ideal)              0.00       0.48
+  phy_reg_reg[71][1]/CK (DFFR_X1)          0.00       0.48 r
+  library setup time                      -0.05       0.43
+  data required time                                  0.43
+  -----------------------------------------------------------
+  data required time                                  0.43
+  data arrival time                                  -0.20
+  -----------------------------------------------------------
+  slack (MET)                                         0.24
+
+
+  Startpoint: READ_2_ADDR[3]
+              (input port)
+  Endpoint: READ_2[0] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  WRF_M8_N8_F4_N_bit32
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  READ_2_ADDR[3] (in)                      0.00       0.00 f
+  U25553/ZN (INV_X1)                       0.05       0.05 r
+  U26256/ZN (NOR3_X1)                      0.03       0.08 f
+  U26425/ZN (AND2_X1)                      0.04       0.12 f
+  U17843/Z (BUF_X1)                        0.06       0.19 f
+  U24575/ZN (AOI222_X1)                    0.11       0.30 r
+  U26385/ZN (OAI221_X1)                    0.05       0.35 f
+  U25138/ZN (NOR4_X1)                      0.08       0.44 r
+  U26066/ZN (NAND4_X1)                     0.04       0.48 f
+  READ_2[0] (out)                          0.00       0.48 f
+  data arrival time                                   0.48
+
+  max_delay                                0.48       0.48
+  output external delay                    0.00       0.48
+  data required time                                  0.48
+  -----------------------------------------------------------
+  data required time                                  0.48
+  data arrival time                                  -0.48
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

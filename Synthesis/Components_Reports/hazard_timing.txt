@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : HAZARD_UNIT
+Version: F-2011.09-SP3
+Date   : Tue Oct  6 20:01:25 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: RD_ID_EX[0]
+              (input port)
+  Endpoint: STALL (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HAZARD_UNIT        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  RD_ID_EX[0] (in)                         0.00       0.00 r
+  U1437/ZN (AND4_X1)                       0.07       0.07 r
+  U1679/ZN (NAND2_X1)                      0.03       0.09 f
+  U1435/ZN (XNOR2_X1)                      0.07       0.16 f
+  U1678/ZN (INV_X1)                        0.04       0.20 r
+  U1657/Z (XOR2_X1)                        0.06       0.26 r
+  U1654/ZN (AND4_X1)                       0.07       0.32 r
+  U1675/ZN (NAND4_X1)                      0.04       0.37 f
+  U1669/ZN (AOI21_X1)                      0.05       0.42 r
+  U1668/ZN (NOR3_X1)                       0.02       0.44 f
+  U1672/ZN (OAI22_X1)                      0.05       0.49 r
+  U1671/ZN (OAI21_X1)                      0.04       0.53 f
+  U1670/ZN (NAND4_X1)                      0.03       0.56 r
+  STALL (out)                              0.00       0.56 r
+  data arrival time                                   0.56
+
+  max_delay                                0.60       0.60
+  output external delay                    0.00       0.60
+  data required time                                  0.60
+  -----------------------------------------------------------
+  data required time                                  0.60
+  data arrival time                                  -0.56
+  -----------------------------------------------------------
+  slack (MET)                                         0.04
+
+
+1

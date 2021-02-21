@@ -1,0 +1,45 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DECODE_IMM_EXT
+Version: F-2011.09-SP3
+Date   : Tue Oct  6 19:55:22 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: J_INSTR (input port)
+  Endpoint: RD[0] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  DECODE_IMM_EXT     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  J_INSTR (in)                             0.00       0.00 f
+  U403/ZN (INV_X1)                         0.04       0.04 r
+  U401/ZN (NAND3_X1)                       0.04       0.08 f
+  U400/Z (BUF_X1)                          0.05       0.14 f
+  U413/ZN (OAI221_X1)                      0.06       0.20 r
+  RD[0] (out)                              0.00       0.20 r
+  data arrival time                                   0.20
+
+  max_delay                                0.20       0.20
+  output external delay                    0.00       0.20
+  data required time                                  0.20
+  -----------------------------------------------------------
+  data required time                                  0.20
+  data arrival time                                  -0.20
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

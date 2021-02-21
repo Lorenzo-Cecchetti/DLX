@@ -1,0 +1,28 @@
+ 
+****************************************
+Report : area
+Design : DECODE_IMM_EXT
+Version: F-2011.09-SP3
+Date   : Tue Oct  6 19:55:38 2020
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mariagrazia.graziano/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+Number of ports:                           78
+Number of nets:                           110
+Number of cells:                           79
+Number of combinational cells:             79
+Number of sequential cells:                 0
+Number of macros:                           0
+Number of buf/inv:                         30
+Number of references:                      14
+
+Combinational area:         73.416000
+Noncombinational area:       0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:            73.416000
+Total area:                 undefined
+1

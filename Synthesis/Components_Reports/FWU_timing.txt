@@ -1,0 +1,49 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FWU
+Version: F-2011.09-SP3
+Date   : Thu Oct 15 13:10:46 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: RS_1_ID_EX[1]
+              (input port)
+  Endpoint: FW_MEM_TO_EX_A[0]
+            (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FWU                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  RS_1_ID_EX[1] (in)                       0.00       0.00 f
+  U1035/ZN (INV_X1)                        0.03       0.03 r
+  U1036/Z (XOR2_X1)                        0.07       0.10 r
+  U1125/ZN (AND4_X1)                       0.06       0.16 r
+  U1161/ZN (AND4_X1)                       0.06       0.22 r
+  U1189/ZN (AOI211_X1)                     0.02       0.25 f
+  FW_MEM_TO_EX_A[0] (out)                  0.00       0.25 f
+  data arrival time                                   0.25
+
+  max_delay                                0.25       0.25
+  output external delay                    0.00       0.25
+  data required time                                  0.25
+  -----------------------------------------------------------
+  data required time                                  0.25
+  data arrival time                                  -0.25
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

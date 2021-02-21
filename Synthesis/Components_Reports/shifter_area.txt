@@ -1,0 +1,28 @@
+ 
+****************************************
+Report : area
+Design : SHIFTER
+Version: F-2011.09-SP3
+Date   : Thu Oct 15 13:04:58 2020
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mariagrazia.graziano/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+Number of ports:                           98
+Number of nets:                           907
+Number of cells:                          867
+Number of combinational cells:            867
+Number of sequential cells:                 0
+Number of macros:                           0
+Number of buf/inv:                        231
+Number of references:                      36
+
+Combinational area:        965.846004
+Noncombinational area:       0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:           965.846004
+Total area:                 undefined
+1

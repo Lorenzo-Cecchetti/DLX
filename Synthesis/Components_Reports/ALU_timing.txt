@@ -1,0 +1,67 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'ALU' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ALU
+Version: F-2011.09-SP3
+Date   : Thu Oct 15 12:47:06 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: func[0] (input port)
+  Endpoint: O_32[26] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ALU                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  func[0] (in)                             0.00       0.00 f
+  U668/ZN (INV_X1)                         0.04       0.04 r
+  U689/ZN (INV_X1)                         0.03       0.07 f
+  U1142/ZN (NAND2_X1)                      0.04       0.11 r
+  U1104/ZN (NAND4_X1)                      0.07       0.18 f
+  U850/Z (BUF_X1)                          0.09       0.27 f
+  U598/ZN (NOR2_X1)                        0.11       0.39 r
+  shift/B[1] (SHIFTER)                     0.00       0.39 r
+  shift/U597/ZN (INV_X1)                   0.06       0.45 f
+  shift/U682/ZN (NOR3_X4)                  0.18       0.62 r
+  shift/U318/ZN (INV_X1)                   0.04       0.66 f
+  shift/U133/Z (BUF_X1)                    0.04       0.71 f
+  shift/U34/Z (BUF_X1)                     0.07       0.78 f
+  shift/U436/ZN (NOR2_X2)                  0.16       0.94 r
+  shift/U105/ZN (INV_X1)                   0.05       0.99 f
+  shift/U447/ZN (OAI222_X1)                0.07       1.06 r
+  shift/U446/ZN (AOI221_X1)                0.04       1.10 f
+  shift/U308/ZN (OAI211_X1)                0.05       1.15 r
+  shift/U362/ZN (AOI22_X1)                 0.04       1.19 f
+  shift/U360/ZN (AOI21_X1)                 0.04       1.23 r
+  shift/Z[26] (SHIFTER)                    0.00       1.23 r
+  U766/ZN (AOI222_X1)                      0.04       1.27 f
+  U765/ZN (INV_X1)                         0.03       1.30 r
+  O_32[26] (out)                           0.00       1.30 r
+  data arrival time                                   1.30
+
+  max_delay                                1.30       1.30
+  output external delay                    0.00       1.30
+  data required time                                  1.30
+  -----------------------------------------------------------
+  data required time                                  1.30
+  data arrival time                                  -1.30
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

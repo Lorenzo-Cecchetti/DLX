@@ -1,0 +1,103 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'BOOTHMUL' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : BOOTHMUL
+Version: F-2011.09-SP3
+Date   : Thu Oct 15 12:36:48 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: reg_B76_reg[23]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: reg_p78_reg[58]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BOOTHMUL           5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  reg_B76_reg[23]/CK (DFF_X1)                             0.00       0.00 r
+  reg_B76_reg[23]/Q (DFF_X1)                              0.09       0.09 f
+  M13_6_0/sel[0] (MUX_ENCODED_4)                          0.00       0.09 f
+  M13_6_0/U15/Z (XOR2_X1)                                 0.08       0.17 f
+  M13_6_0/U16/ZN (AND2_X1)                                0.05       0.22 f
+  M13_6_0/U74/ZN (AOI22_X1)                               0.05       0.27 r
+  M13_6_0/U75/ZN (NAND2_X1)                               0.03       0.30 f
+  M13_6_0/output[1] (MUX_ENCODED_4)                       0.00       0.30 f
+  ADD13_6_0/A[1] (ADDER_4)                                0.00       0.30 f
+  ADD13_6_0/add_1_root_add_20_2/A[1] (ADDER_4_DW01_add_2)
+                                                          0.00       0.30 f
+  ADD13_6_0/add_1_root_add_20_2/U27/ZN (NAND2_X1)         0.04       0.34 r
+  ADD13_6_0/add_1_root_add_20_2/U23/ZN (NAND2_X1)         0.03       0.38 f
+  ADD13_6_0/add_1_root_add_20_2/U20/ZN (NOR2_X1)          0.05       0.43 r
+  ADD13_6_0/add_1_root_add_20_2/U22/ZN (OAI21_X1)         0.03       0.46 f
+  ADD13_6_0/add_1_root_add_20_2/U48/ZN (NAND2_X1)         0.03       0.49 r
+  ADD13_6_0/add_1_root_add_20_2/U47/ZN (AOI21_X1)         0.03       0.51 f
+  ADD13_6_0/add_1_root_add_20_2/U36/ZN (OAI21_X1)         0.05       0.56 r
+  ADD13_6_0/add_1_root_add_20_2/U37/ZN (NAND2_X1)         0.04       0.60 f
+  ADD13_6_0/add_1_root_add_20_2/U161/Z (BUF_X1)           0.04       0.64 f
+  ADD13_6_0/add_1_root_add_20_2/U502/ZN (NAND2_X1)        0.03       0.67 r
+  ADD13_6_0/add_1_root_add_20_2/U2/ZN (AND2_X2)           0.04       0.72 r
+  ADD13_6_0/add_1_root_add_20_2/U223/ZN (OAI21_X1)        0.03       0.74 f
+  ADD13_6_0/add_1_root_add_20_2/U374/ZN (NAND2_X1)        0.03       0.77 r
+  ADD13_6_0/add_1_root_add_20_2/U373/ZN (NAND2_X1)        0.03       0.80 f
+  ADD13_6_0/add_1_root_add_20_2/U371/ZN (XNOR2_X1)        0.06       0.86 f
+  ADD13_6_0/add_1_root_add_20_2/SUM[19] (ADDER_4_DW01_add_2)
+                                                          0.00       0.86 f
+  ADD13_6_0/S[19] (ADDER_4)                               0.00       0.86 f
+  ADD14_6_1/B[19] (ADDER_3)                               0.00       0.86 f
+  ADD14_6_1/add_1_root_add_20_2/B[19] (ADDER_3_DW01_add_2)
+                                                          0.00       0.86 f
+  ADD14_6_1/add_1_root_add_20_2/U131/ZN (OR2_X1)          0.06       0.91 f
+  ADD14_6_1/add_1_root_add_20_2/U583/ZN (NAND3_X1)        0.03       0.95 r
+  ADD14_6_1/add_1_root_add_20_2/U372/ZN (NAND2_X1)        0.03       0.97 f
+  ADD14_6_1/add_1_root_add_20_2/U204/ZN (NAND2_X1)        0.03       1.01 r
+  ADD14_6_1/add_1_root_add_20_2/U91/ZN (AOI21_X1)         0.03       1.04 f
+  ADD14_6_1/add_1_root_add_20_2/U486/ZN (OAI21_X1)        0.04       1.08 r
+  ADD14_6_1/add_1_root_add_20_2/U179/ZN (NAND3_X1)        0.03       1.11 f
+  ADD14_6_1/add_1_root_add_20_2/U171/ZN (AND2_X1)         0.04       1.15 f
+  ADD14_6_1/add_1_root_add_20_2/U518/ZN (NAND3_X1)        0.03       1.18 r
+  ADD14_6_1/add_1_root_add_20_2/U514/ZN (NAND3_X1)        0.04       1.22 f
+  ADD14_6_1/add_1_root_add_20_2/U119/ZN (NAND2_X1)        0.04       1.25 r
+  ADD14_6_1/add_1_root_add_20_2/U137/ZN (NAND2_X1)        0.03       1.29 f
+  ADD14_6_1/add_1_root_add_20_2/U164/ZN (NAND2_X1)        0.03       1.31 r
+  ADD14_6_1/add_1_root_add_20_2/U165/ZN (AND2_X1)         0.04       1.35 r
+  ADD14_6_1/add_1_root_add_20_2/U492/ZN (NAND2_X1)        0.03       1.38 f
+  ADD14_6_1/add_1_root_add_20_2/U62/Z (BUF_X1)            0.04       1.42 f
+  ADD14_6_1/add_1_root_add_20_2/U267/ZN (NAND2_X1)        0.03       1.45 r
+  ADD14_6_1/add_1_root_add_20_2/U266/ZN (NAND2_X1)        0.03       1.48 f
+  ADD14_6_1/add_1_root_add_20_2/U317/ZN (XNOR2_X1)        0.05       1.53 f
+  ADD14_6_1/add_1_root_add_20_2/SUM[58] (ADDER_3_DW01_add_2)
+                                                          0.00       1.53 f
+  ADD14_6_1/S[58] (ADDER_3)                               0.00       1.53 f
+  reg_p78_reg[58]/D (DFF_X1)                              0.01       1.54 f
+  data arrival time                                                  1.54
+
+  clock CLK (rise edge)                                   1.58       1.58
+  clock network delay (ideal)                             0.00       1.58
+  reg_p78_reg[58]/CK (DFF_X1)                             0.00       1.58 r
+  library setup time                                     -0.04       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

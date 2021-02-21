@@ -1,0 +1,92 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : STACK
+Version: F-2011.09-SP3
+Date   : Tue Oct  6 20:27:12 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: address_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: address_reg[22]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  STACK              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  address_reg[2]/CK (DFFR_X1)              0.00       0.00 r
+  address_reg[2]/QN (DFFR_X1)              0.07       0.07 f
+  U1435/ZN (INV_X2)                        0.06       0.13 r
+  add_56/A[2] (STACK_DW01_inc_1)           0.00       0.13 r
+  add_56/U117/ZN (NAND2_X1)                0.04       0.18 f
+  add_56/U113/ZN (NOR2_X1)                 0.05       0.23 r
+  add_56/U14/ZN (AND4_X2)                  0.07       0.30 r
+  add_56/U110/ZN (NAND2_X1)                0.04       0.34 f
+  add_56/U50/ZN (NOR2_X1)                  0.04       0.39 r
+  add_56/U118/ZN (XNOR2_X1)                0.03       0.42 f
+  add_56/SUM[22] (STACK_DW01_inc_1)        0.00       0.42 f
+  U2201/ZN (AOI22_X1)                      0.05       0.47 r
+  U1430/ZN (NAND2_X1)                      0.03       0.50 f
+  address_reg[22]/D (DFFR_X1)              0.01       0.51 f
+  data arrival time                                   0.51
+
+  clock CLK (rise edge)                    0.55       0.55
+  clock network delay (ideal)              0.00       0.55
+  address_reg[22]/CK (DFFR_X1)             0.00       0.55 r
+  library setup time                      -0.04       0.51
+  data required time                                  0.51
+  -----------------------------------------------------------
+  data required time                                  0.51
+  data arrival time                                  -0.51
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: RET (input port)
+  Endpoint: DATA_OUT[0]
+            (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  STACK              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  RET (in)                                 0.00       0.00 f
+  U1724/ZN (INV_X1)                        0.04       0.04 r
+  U2254/ZN (NOR3_X4)                       0.07       0.10 f
+  U1680/ZN (NAND2_X1)                      0.04       0.15 r
+  U1497/Z (BUF_X1)                         0.09       0.24 r
+  U1536/ZN (OAI22_X1)                      0.05       0.29 f
+  U1730/ZN (AOI221_X1)                     0.09       0.38 r
+  U1728/ZN (NAND2_X1)                      0.03       0.40 f
+  DATA_OUT[0] (out)                        0.00       0.41 f
+  data arrival time                                   0.41
+
+  max_delay                                0.55       0.55
+  output external delay                    0.00       0.55
+  data required time                                  0.55
+  -----------------------------------------------------------
+  data required time                                  0.55
+  data arrival time                                  -0.41
+  -----------------------------------------------------------
+  slack (MET)                                         0.14
+
+
+1

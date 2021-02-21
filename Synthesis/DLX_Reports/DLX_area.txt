@@ -1,0 +1,28 @@
+ 
+****************************************
+Report : area
+Design : DLX
+Version: F-2011.09-SP3
+Date   : Sun Oct  4 19:55:06 2020
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mariagrazia.graziano/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+Number of ports:                          166
+Number of nets:                           220
+Number of cells:                            2
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros:                           0
+Number of buf/inv:                          0
+Number of references:                       2
+
+Combinational area:       51529.786371
+Noncombinational area:    100119.737828
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:          151649.524199
+Total area:                 undefined
+1

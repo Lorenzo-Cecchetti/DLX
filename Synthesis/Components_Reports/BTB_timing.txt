@@ -1,0 +1,99 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'BTB' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : BTB
+Version: F-2011.09-SP3
+Date   : Thu Oct 15 11:48:00 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: full_empty_n_reg[249]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: full_empty_n_reg[249]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BTB                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  full_empty_n_reg[249]/CK (SDFFR_X1)      0.00 #     0.00 r
+  full_empty_n_reg[249]/Q (SDFFR_X1)       0.07       0.07 f
+  U71785/ZN (AOI22_X1)                     0.07       0.14 r
+  full_empty_n_reg[249]/SE (SDFFR_X1)      0.01       0.15 r
+  data arrival time                                   0.15
+
+  clock CLK (rise edge)                    0.96       0.96
+  clock network delay (ideal)              0.00       0.96
+  full_empty_n_reg[249]/CK (SDFFR_X1)      0.00       0.96 r
+  library setup time                      -0.09       0.87
+  data required time                                  0.87
+  -----------------------------------------------------------
+  data required time                                  0.87
+  data arrival time                                  -0.15
+  -----------------------------------------------------------
+  slack (MET)                                         0.72
+
+
+  Startpoint: PC_CHECK[2]
+              (input port)
+  Endpoint: NEW_PC[0] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BTB                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  PC_CHECK[2] (in)                         0.00       0.00 r
+  U77318/ZN (INV_X1)                       0.02       0.02 f
+  U79124/ZN (NOR2_X2)                      0.10       0.12 r
+  U45396/ZN (AND2_X1)                      0.08       0.20 r
+  U77172/ZN (NAND2_X1)                     0.04       0.24 f
+  U35861/Z (BUF_X1)                        0.05       0.29 f
+  U36535/ZN (INV_X2)                       0.08       0.37 r
+  U36226/ZN (NAND2_X1)                     0.04       0.42 f
+  U36228/ZN (AND3_X1)                      0.04       0.46 f
+  U36013/ZN (AND4_X1)                      0.04       0.50 f
+  U36010/ZN (AND4_X1)                      0.04       0.55 f
+  U79888/ZN (NAND4_X1)                     0.03       0.58 r
+  eq_30_2/A[20] (BTB_DW01_cmp6_0)          0.00       0.58 r
+  eq_30_2/U31/ZN (XNOR2_X1)                0.05       0.63 r
+  eq_30_2/U29/ZN (AND4_X1)                 0.06       0.70 r
+  eq_30_2/U48/ZN (AND4_X1)                 0.06       0.76 r
+  eq_30_2/U39/ZN (AND4_X2)                 0.06       0.82 r
+  eq_30_2/EQ (BTB_DW01_cmp6_0)             0.00       0.82 r
+  U77237/ZN (AND2_X2)                      0.05       0.88 r
+  U77257/ZN (INV_X1)                       0.04       0.92 f
+  U79984/ZN (NOR2_X1)                      0.04       0.96 r
+  NEW_PC[0] (out)                          0.00       0.96 r
+  data arrival time                                   0.96
+
+  max_delay                                0.96       0.96
+  output external delay                    0.00       0.96
+  data required time                                  0.96
+  -----------------------------------------------------------
+  data required time                                  0.96
+  data arrival time                                  -0.96
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

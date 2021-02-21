@@ -1,0 +1,50 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ADDER_PC
+Version: F-2011.09-SP3
+Date   : Thu Oct 15 13:12:08 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: PC[2] (input port)
+  Endpoint: NEW_PC[28] (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ADDER_PC           5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  PC[2] (in)                                              0.00       0.00 r
+  add_14/A[2] (ADDER_PC_DW01_add_2)                       0.00       0.00 r
+  add_14/U15/ZN (NAND3_X1)                                0.04       0.04 f
+  add_14/U17/ZN (NOR2_X1)                                 0.04       0.08 r
+  add_14/U18/ZN (AND4_X2)                                 0.07       0.14 r
+  add_14/U25/ZN (AND2_X2)                                 0.05       0.20 r
+  add_14/U112/ZN (NAND2_X1)                               0.03       0.23 f
+  add_14/U97/ZN (XNOR2_X1)                                0.05       0.28 f
+  add_14/SUM[28] (ADDER_PC_DW01_add_2)                    0.00       0.28 f
+  NEW_PC[28] (out)                                        0.00       0.28 f
+  data arrival time                                                  0.28
+
+  max_delay                                               0.28       0.28
+  output external delay                                   0.00       0.28
+  data required time                                                 0.28
+  --------------------------------------------------------------------------
+  data required time                                                 0.28
+  data arrival time                                                 -0.28
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

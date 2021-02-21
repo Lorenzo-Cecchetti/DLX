@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : JUMP_COMPARATOR
+Version: F-2011.09-SP3
+Date   : Tue Oct  6 20:19:04 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: A[22] (input port)
+  Endpoint: COND (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  JUMP_COMPARATOR    5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  A[22] (in)                               0.00       0.00 f
+  U68/ZN (NOR2_X1)                         0.04       0.04 r
+  U69/ZN (NAND2_X1)                        0.03       0.07 f
+  U61/ZN (NOR2_X1)                         0.04       0.11 r
+  U56/ZN (NAND4_X1)                        0.05       0.16 f
+  U57/ZN (XNOR2_X1)                        0.06       0.21 f
+  U73/ZN (AND2_X1)                         0.03       0.25 f
+  COND (out)                               0.00       0.25 f
+  data arrival time                                   0.25
+
+  max_delay                                0.25       0.25
+  output external delay                    0.00       0.25
+  data required time                                  0.25
+  -----------------------------------------------------------
+  data required time                                  0.25
+  data arrival time                                  -0.25
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

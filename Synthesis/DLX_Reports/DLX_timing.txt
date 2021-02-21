@@ -1,0 +1,132 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'DLX' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DLX
+Version: F-2011.09-SP3
+Date   : Sun Oct  4 19:54:54 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: datapath_inst/opcd/OUT_DATA_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: datapath_inst/btb_inst/clk_gate_full_empty_n_reg_79/latch
+            (negative level-sensitive latch clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  DLX                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  datapath_inst/opcd/OUT_DATA_reg[0]/CK (DFFR_X1)         0.00       0.00 r
+  datapath_inst/opcd/OUT_DATA_reg[0]/QN (DFFR_X1)         0.06       0.06 f
+  datapath_inst/opcd/U7/ZN (INV_X1)                       0.04       0.10 r
+  datapath_inst/opcd/OUT_DATA[0] (REG_GEN_N6)             0.00       0.10 r
+  datapath_inst/OPCODE[0] (DATAPATH)                      0.00       0.10 r
+  cu_inst/OPCODE[0] (CU)                                  0.00       0.10 r
+  cu_inst/U59/ZN (INV_X1)                                 0.03       0.13 f
+  cu_inst/U167/ZN (NAND2_X1)                              0.03       0.16 r
+  cu_inst/U186/ZN (NAND2_X1)                              0.03       0.19 f
+  cu_inst/U64/ZN (AND2_X1)                                0.04       0.22 f
+  cu_inst/U69/ZN (AND2_X2)                                0.04       0.26 f
+  cu_inst/J_INSTR (CU)                                    0.00       0.26 f
+  datapath_inst/J_INSTR (DATAPATH)                        0.00       0.26 f
+  datapath_inst/decode_IR/J_INSTR (DECODE_IMM_EXT)        0.00       0.26 f
+  datapath_inst/decode_IR/U79/ZN (NOR2_X1)                0.06       0.32 r
+  datapath_inst/decode_IR/RS_1[0] (DECODE_IMM_EXT)        0.00       0.32 r
+  datapath_inst/rf_dec/READ_1_ADDR[0] (RF_DECODER_M8_N8_F4_N_bit32)
+                                                          0.00       0.32 r
+  datapath_inst/rf_dec/U87/ZN (AND2_X1)                   0.05       0.37 r
+  datapath_inst/rf_dec/U100/ZN (NAND2_X1)                 0.03       0.40 f
+  datapath_inst/rf_dec/U103/ZN (NAND3_X1)                 0.04       0.44 r
+  datapath_inst/rf_dec/U123/ZN (NAND2_X1)                 0.03       0.47 f
+  datapath_inst/rf_dec/U93/ZN (NAND3_X1)                  0.04       0.51 r
+  datapath_inst/rf_dec/U117/ZN (NAND2_X1)                 0.03       0.54 f
+  datapath_inst/rf_dec/U120/ZN (NAND3_X1)                 0.03       0.57 r
+  datapath_inst/rf_dec/r377/U1_4/CO (FA_X1)               0.07       0.64 r
+  datapath_inst/rf_dec/U12/ZN (AND2_X2)                   0.05       0.69 r
+  datapath_inst/rf_dec/U227/ZN (XNOR2_X1)                 0.06       0.74 r
+  datapath_inst/rf_dec/U113/ZN (NAND2_X1)                 0.03       0.77 f
+  datapath_inst/rf_dec/U112/ZN (XNOR2_X1)                 0.06       0.83 f
+  datapath_inst/rf_dec/U95/ZN (NAND2_X1)                  0.04       0.87 r
+  datapath_inst/rf_dec/U89/ZN (NAND3_X2)                  0.08       0.95 f
+  datapath_inst/rf_dec/READ_1_ADDR_OUT[6] (RF_DECODER_M8_N8_F4_N_bit32)
+                                                          0.00       0.95 f
+  datapath_inst/reg_file/READ_1_ADDR[6] (WRF_M8_N8_F4_N_bit32)
+                                                          0.00       0.95 f
+  datapath_inst/reg_file/U239/Z (CLKBUF_X1)               0.05       1.00 f
+  datapath_inst/reg_file/U6958/ZN (AND2_X1)               0.04       1.05 f
+  datapath_inst/reg_file/U238/Z (BUF_X2)                  0.06       1.11 f
+  datapath_inst/reg_file/U6299/ZN (AOI22_X1)              0.06       1.17 r
+  datapath_inst/reg_file/U6077/ZN (OAI221_X1)             0.05       1.22 f
+  datapath_inst/reg_file/U6074/ZN (NOR4_X1)               0.08       1.30 r
+  datapath_inst/reg_file/U6934/ZN (NAND4_X1)              0.05       1.35 f
+  datapath_inst/reg_file/READ_1[29] (WRF_M8_N8_F4_N_bit32)
+                                                          0.00       1.35 f
+  datapath_inst/U1328/ZN (INV_X1)                         0.03       1.38 r
+  datapath_inst/U1327/ZN (OAI22_X1)                       0.03       1.42 f
+  datapath_inst/U1948/ZN (NOR2_X1)                        0.04       1.45 r
+  datapath_inst/U330/ZN (NAND3_X1)                        0.03       1.49 f
+  datapath_inst/U223/ZN (NAND2_X1)                        0.03       1.52 r
+  datapath_inst/U225/ZN (NAND2_X1)                        0.03       1.54 f
+  datapath_inst/jump_comp/A[29] (JUMP_COMPARATOR)         0.00       1.54 f
+  datapath_inst/jump_comp/U10/ZN (NOR4_X1)                0.09       1.64 r
+  datapath_inst/jump_comp/U14/ZN (NAND4_X1)               0.05       1.68 f
+  datapath_inst/jump_comp/U13/ZN (NOR2_X1)                0.05       1.73 r
+  datapath_inst/jump_comp/U11/ZN (XNOR2_X1)               0.06       1.79 r
+  datapath_inst/jump_comp/U3/ZN (AND2_X1)                 0.05       1.83 r
+  datapath_inst/jump_comp/COND (JUMP_COMPARATOR)          0.00       1.83 r
+  datapath_inst/U2108/ZN (INV_X1)                         0.02       1.86 f
+  datapath_inst/U425/ZN (AND2_X1)                         0.04       1.89 f
+  datapath_inst/btb_inst/WRITE_DELETE[0] (BTB)            0.00       1.89 f
+  datapath_inst/btb_inst/U15452/ZN (INV_X1)               0.04       1.93 r
+  datapath_inst/btb_inst/U15451/ZN (NAND2_X1)             0.03       1.96 f
+  datapath_inst/btb_inst/U15450/ZN (OAI21_X1)             0.04       2.00 r
+  datapath_inst/btb_inst/U302/ZN (AND2_X1)                0.07       2.07 r
+  datapath_inst/btb_inst/U15429/ZN (NAND2_X1)             0.05       2.12 f
+  datapath_inst/btb_inst/U307/Z (CLKBUF_X1)               0.06       2.17 f
+  datapath_inst/btb_inst/U15169/ZN (NOR2_X1)              0.04       2.22 r
+  datapath_inst/btb_inst/clk_gate_full_empty_n_reg_79/EN (SNPS_CLOCK_GATE_HIGH_BTB_432)
+                                                          0.00       2.22 r
+  datapath_inst/btb_inst/clk_gate_full_empty_n_reg_79/test_or/ZN (OR2_X1)
+                                                          0.03       2.25 r
+  datapath_inst/btb_inst/clk_gate_full_empty_n_reg_79/latch/D (DLL_X1)
+                                                          0.01       2.26 r
+  data arrival time                                                  2.26
+
+  clock CLK (fall edge)                                   1.15       1.15
+  clock network delay (ideal)                             0.00       1.15
+  datapath_inst/btb_inst/clk_gate_full_empty_n_reg_79/latch/GN (DLL_X1)
+                                                          0.00       1.15 f
+  time borrowed from endpoint                             1.11       2.26
+  data required time                                                 2.26
+  --------------------------------------------------------------------------
+  data required time                                                 2.26
+  data arrival time                                                 -2.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  CLK pulse width                                         1.15   
+  library setup time                                     -0.03   
+  --------------------------------------------------------------
+  max time borrow                                         1.12   
+  actual time borrow                                      1.11   
+  --------------------------------------------------------------
+
+
+1
