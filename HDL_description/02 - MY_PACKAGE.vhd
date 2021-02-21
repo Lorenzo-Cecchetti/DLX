@@ -1,0 +1,78 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+package my_package is
+	type mul_pipe_t is array(6 downto 0) of std_logic_vector(6 downto 0);
+	type stack_t is array(7 downto 0) of std_logic_vector(31 downto 0);
+	constant OPCODE_SIZE : integer := 6;
+	constant FUNC_SIZE : integer := 11;
+	
+	-- OPCODE values
+	constant J : std_logic_vector(OPCODE_SIZE-1 downto 0)    := "000010";
+	constant JAL : std_logic_vector(OPCODE_SIZE-1 downto 0)  := "000011";
+	constant BEQZ : std_logic_vector(OPCODE_SIZE-1 downto 0) := "000100";
+	constant BNEZ : std_logic_vector(OPCODE_SIZE-1 downto 0) := "000101";
+	constant ADDI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "001000";
+	constant ADDUI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "001001";
+	constant SUBI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "001010";
+	constant SUBUI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "001011";
+	constant ANDI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "001100";
+	constant ORI : std_logic_vector(OPCODE_SIZE-1 downto 0)  := "001101";
+	constant XORI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "001110";
+	constant NANDI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "110000";
+	constant NORI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "110001";
+	constant XNORI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "110010";
+	constant LHI : std_logic_vector(OPCODE_SIZE-1 downto 0)  := "001111";
+	constant JR : std_logic_vector(OPCODE_SIZE-1 downto 0)   := "010010";
+	constant JALR : std_logic_vector(OPCODE_SIZE-1 downto 0) := "010011";
+	constant SLLI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "010100";
+	constant NOP : std_logic_vector(OPCODE_SIZE-1 downto 0)  := "010101";
+	constant SRLI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "010110";
+	constant SRAI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "010111";
+	constant SEQI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "011000";
+	constant SNEI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "011001";
+	constant SLTI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "011010";
+	constant SGTI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "011011";
+	constant SLEI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "011100";
+	constant SGEI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "011101";
+	constant LB : std_logic_vector(OPCODE_SIZE-1 downto 0)   := "100000";
+	constant LH : std_logic_vector(OPCODE_SIZE-1 downto 0)   := "100001";
+	constant LW : std_logic_vector(OPCODE_SIZE-1 downto 0)   := "100011";
+	constant LBU : std_logic_vector(OPCODE_SIZE-1 downto 0)  := "100100";
+	constant LHU : std_logic_vector(OPCODE_SIZE-1 downto 0)  := "100101";
+	constant SB : std_logic_vector(OPCODE_SIZE-1 downto 0)   := "101000";
+	constant SH : std_logic_vector(OPCODE_SIZE-1 downto 0)   := "101001";
+	constant SW : std_logic_vector(OPCODE_SIZE-1 downto 0)   := "101011";
+	constant SLTUI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "111010";
+	constant SGTUI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "111011";
+	constant SLEUI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "111100";
+	constant SGEUI : std_logic_vector(OPCODE_SIZE-1 downto 0):= "111101";
+	constant MULI : std_logic_vector(OPCODE_SIZE-1 downto 0) := "110011";
+	constant R_TYPE_OPCODE : std_logic_vector(OPCODE_SIZE-1 downto 0) := "000000";
+	
+	--FUNC VALUES
+	constant SLL_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000000100";
+	constant SRL_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000000110";
+	constant SRA_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000000111";
+	constant ADD_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000100000";
+	constant ADDU_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00000100001";
+	constant SUB_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000100010";
+	constant SUBU_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00000100011";
+	constant AND_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000100100";
+	constant OR_R : std_logic_vector(FUNC_SIZE-1 downto 0)  := "00000100101";
+	constant XOR_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000100110";
+	constant NAND_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00000111110";
+	constant NOR_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000111111";
+	constant XNOR_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00001000000";
+	constant SEQ_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000101000";
+	constant SNE_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000101001";
+	constant SLT_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000101010";
+	constant SGT_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000101011";
+	constant SLE_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000101100";
+	constant SGE_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00000101101";
+	constant SLTU_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00000111010";
+	constant SGTU_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00000111011";
+	constant SLEU_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00000111100";
+	constant SGEU_R : std_logic_vector(FUNC_SIZE-1 downto 0):= "00000111101";
+	constant MUL_R : std_logic_vector(FUNC_SIZE-1 downto 0) := "00001000001";
+end package my_package;
